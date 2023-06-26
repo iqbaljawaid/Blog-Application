@@ -1,0 +1,28 @@
+version: "3"
+services:
+  application:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: iqbaljawaid/blog-app
+    ports:
+      - "9090:9090"
+    networks:
+      - springboot-db-net
+    depends_on:
+      - mysqldb
+    volumes:
+      - /data/springboot-app
+
+  mysqldb:
+    image: mysql:5.7
+    networks:
+      - springboot-db-net
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=module3
+    volumes:
+      - /data/mysql
+
+networks:
+  springboot-db-net:

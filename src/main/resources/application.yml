@@ -1,0 +1,28 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: admin
+    url: jdbc:mysql://mysqldb:3306/module3   
+    username: iqbal
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+app:
+  messages:
+    signUpSuccess: Your account is created please login
+    signUpFailure: Email Id already exists...!!
+    blogCreationSuccess: Blog Created successfully...
+    blogCreationFailure: Something went wrong...
+    blogDeleteSuccess: Blog deleted...
+    blogDeleteFailure: Something went wrong
+    commentCreationSuccess: Your comment has been saved
+    commentCreationFailure: Something went wrong
+    commentDeleteSuccess: Comment deleted...
+    commentDeleteFailure: Something went wrong
